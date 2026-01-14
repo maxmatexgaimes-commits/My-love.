@@ -1,0 +1,73 @@
+/* RESET E BASE */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: #fff0f5;
+  overflow-x: hidden;
+}
+
+/* CARTA */
+.carta-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carta {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,.3);
+  animation: flutuar 2s infinite alternate;
+}
+
+.carta button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 20px;
+  background: #ff8fb1;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@keyframes flutuar { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+
+/* LIVRO REALISTA */
+#livro-section { display: none; padding: 60px 0; text-align: center; }
+.livro { width: 320px; height: 440px; margin: auto; perspective: 1500px; position: relative; }
+.pagina {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transition: transform 1s ease-in-out;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0,0,0,.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+.pagina img { width: 90%; height: 65%; object-fit: cover; border-radius: 10px; }
+.pagina p { margin-top: 10px; color: #d6336c; }
+.pagina.virada { transform: rotateY(-180deg); }
+.controls { margin-top: 20px; }
+.controls button { padding: 10px 20px; border: none; border-radius: 15px; background: #ff8fb1; color: white; cursor: pointer; margin: 0 5px; }
+
+/* CONTADOR */
+.contador { text-align: center; margin: 60px 20px; font-size: 20px; color: #c9184a; }
+
+/* SAKURA */
+.sakura { position: relative; height: 300px; background: linear-gradient(#ffe6f0,#fff); overflow: hidden; }
+.arvore::before { content: "🌸🌳"; position: absolute; font-size: 120px; right: 40px; bottom: 0; }
+.boneco { position: absolute; bottom: 20px; width: 60px; height: 80px; border-radius: 50%; background: #fcd5ce; }
+.menino { left: 50px; }
+.menina { left: 120px; }
+.petala { position: absolute; top: -30px; font-size: 22px; animation: cair linear infinite; }
+@keyframes cair { to { transform: translateY(350px) rotate(360deg); } }
